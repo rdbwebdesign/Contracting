@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Build Co. | Premium Contracting & Construction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Apex Build <span class="logo-accent">Co.</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="projects.html">Our Portfolio</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact" class="btn-nav">Get An Estimate</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-split">
+        <div class="hero-content">
+            <span class="hero-subtitle">Architectural Integrity. Master Craftsmanship.</span>
+            <h1>Building Spaces That Inspire Living.</h1>
+            <p>From high-end residential renovations to sophisticated commercial builds, we transform architectural blueprints into meticulously crafted realities.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn">Start Your Project</a>
+                <a href="projects.html" class="btn btn-secondary">View Portfolio</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Luxury home construction project">
+        </div>
+    </section>
+
+    <main>
+        <section id="services" class="container">
+            <div class="section-header">
+                <h2>Our Core Disciplines</h2>
+                <div class="header-line"></div>
+                <p>We deliver uncompromising precision across every phase of development.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-number">01</span>
+                    <h3>Architectural Renovations</h3>
+                    <p>Complete structural reimagining of heritage homes and modern residences, crafted down to the finest finish work.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-number">02</span>
+                    <h3>Custom Home Building</h3>
+                    <p>Ground-up general contracting. We manage engineering, site sourcing, framing, and luxury artisanal handovers.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-number">03</span>
+                    <h3>Commercial Fit-Outs</h3>
+                    <p>Elevating boutique retail, modern corporate offices, and premium hospitality spaces with high-end architectural fixtures.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-asymmetric">
+            <div class="feature-image">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Contractor examining building plans blueprint">
+            </div>
+            <div class="feature-text">
+                <h2>Uncompromising Standards, Transparent Delivery.</h2>
+                <p>We believe great contracting relies as much on rigorous communication as it does on masterful craftsmanship. We replace standard industry guesswork with dynamic schedules and transparent line-item updates.</p>
+                <blockquote class="accent-quote">
+                    "Detail is not the detail. It is the product."
+                </blockquote>
+                <div class="stat-row">
+                    <div class="stat-box"><strong>15+</strong><span>Years Active</span></div>
+                    <div class="stat-box"><strong>240+</strong><span>Builds Completed</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <div class="intake-wrapper">
+                <div class="intake-info">
+                    <h2>Ready to Build?</h2>
+                    <p>Schedule an on-site consultation or request a preliminary structural estimate with our project managers.</p>
+                    <div class="contact-details">
+                        <p><strong>Direct Line:</strong> (555) 234-8900</p>
+                        <p><strong>HQ:</strong> 742 Industrial Parkway, Suite 100</p>
+                    </div>
+                </div>
+                <div class="intake-form-box">
+                    <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Estimate request logged! Our estimator will contact you within 24 business hours.');">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-type">Project Scope</label>
+                            <select id="project-type">
+                                <option>Custom Residential Build</option>
+                                <option>Whole-Home Remodel</option>
+                                <option>Commercial Tenant Improvement</option>
+                                <option>Other Architectural Contracting</option>
+                            </select>
+                        </div>
+                        <div class="form-group">

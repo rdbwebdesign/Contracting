@@ -1,0 +1,534 @@
+/* ==========================================================================
+   1. GLOBAL ARCHITECTURAL STYLE & VARIABLE SCHEMA
+   ========================================================================== */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+:root { 
+    --primary: #191f24;       /* Slate Obsidian - Gives a strong industrial base */
+    --accent: #c5a880;        /* Muted Raw Brass / Architectural Gold */
+    --bg-light: #fdfdfc;      /* Crisp architectural gallery white */
+    --bg-alt: #f4f5f6;        /* Structural concrete/stone grey tint */
+    --text-dark: #242b30;     /* Rich charcoal for deep contrast readability */
+    --text-muted: #626c75;    /* Civil engineering Blueprint steel-grey */
+    --card-bg: #ffffff;
+    --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+body { 
+    background-color: var(--bg-light); 
+    color: var(--text-dark); 
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.7; 
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   2. HEADER & ARCHITECTURAL NAVIGATION
+   ========================================================================== */
+header { 
+    background-color: rgba(253, 253, 252, 0.95); 
+    backdrop-filter: blur(12px);
+    padding: 1.5rem 2rem; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    border-bottom: 1px solid rgba(25, 31, 36, 0.06);
+}
+
+nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1300px; 
+    margin: 0 auto; 
+}
+
+.logo { 
+    color: var(--primary); 
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    text-decoration: none; 
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+
+.logo-accent {
+    color: var(--accent);
+}
+
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    align-items: center;
+    gap: 3rem; 
+}
+
+.nav-links a { 
+    color: var(--text-muted); 
+    text-decoration: none; 
+    font-weight: 500; 
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover, 
+.nav-links .active { 
+    color: var(--primary); 
+}
+
+.btn-nav {
+    border: 1px solid var(--primary);
+    padding: 0.6rem 1.5rem;
+    font-size: 0.8rem !important;
+}
+
+.btn-nav:hover {
+    background-color: var(--primary);
+    color: white !important;
+}
+
+/* ==========================================================================
+   3. RE-IMAGINED HERO LAYOUT (SPLIT-SCREEN STRUCTURAL GRAPHIC)
+   ========================================================================== */
+.hero-split { 
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    min-height: 85vh;
+    background-color: var(--bg-alt);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 6rem 4rem 4rem;
+    max-width: 800px;
+    margin-left: auto;
+}
+
+.hero-subtitle {
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.hero-split h1 { 
+    font-family: 'Playfair Display', serif;
+    font-size: 4.2rem; 
+    color: var(--primary);
+    font-weight: 500;
+    line-height: 1.15;
+    margin-bottom: 1.5rem; 
+    letter-spacing: -1.5px;
+}
+
+.hero-split p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Structural Buttons */
+.btn { 
+    background-color: var(--primary); 
+    color: white; 
+    padding: 1.1rem 2.8rem; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: inline-block; 
+    transition: var(--transition);
+    border: 1px solid var(--primary);
+}
+
+.btn:hover { 
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid rgba(25, 31, 36, 0.2);
+}
+
+.btn-secondary:hover {
+    background-color: transparent;
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.btn-full {
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.hero-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   4. MODULAR SECTIONS & SERVICES GRID
+   ========================================================================== */
+.container { 
+    max-width: 1300px; 
+    margin: 0 auto; 
+    padding: 7.5rem 2rem; 
+}
+
+.section-header { 
+    text-align: center; 
+    max-width: 750px; 
+    margin: 0 auto 5rem auto; 
+}
+
+.section-header h2 { 
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; 
+    color: var(--primary); 
+    margin-bottom: 1rem; 
+}
+
+.header-line {
+    width: 60px;
+    height: 2px;
+    background-color: var(--accent);
+    margin: 0 auto 1.5rem auto;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* Clean Services Configuration */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.service-card {
+    background: var(--card-bg);
+    padding: 3.5rem 2.5rem;
+    border-top: 3px solid var(--primary);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.02);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    border-top-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.05);
+}
+
+.service-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: rgba(197, 168, 128, 0.4);
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   5. ASYMMETRIC CORPORATE VALUE RUNWAY
+   ========================================================================== */
+.feature-asymmetric {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    background-color: var(--primary);
+    color: white;
+    align-items: center;
+}
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    object-fit: cover;
+    display: block;
+}
+
+.feature-text {
+    padding: 6rem;
+}
+
+.feature-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.feature-text p {
+    color: #a4b0ba;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+}
+
+.accent-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--accent);
+    border-left: 2px solid var(--accent);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+}
+
+.stat-row {
+    display: flex;
+    gap: 4rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 2rem;
+}
+
+.stat-box strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--accent);
+    display: block;
+}
+
+.stat-box span {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: #a4b0ba;
+}
+
+/* ==========================================================================
+   6. ARCHITECTURAL PORTFOLIO EXTRUSION
+   ========================================================================== */
+.portfolio-filter {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.portfolio-filter span {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-right: 1rem;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    margin: 0 0.75rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.filter-btn.active, .filter-btn:hover {
+    color: var(--primary);
+    border-bottom-color: var(--accent);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+}
+
+.portfolio-item {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    background: var(--card-bg);
+    align-items: center;
+}
+
+.portfolio-item:nth-child(even) {
+    direction: rtl;
+}
+
+.portfolio-item:nth-child(even) .portfolio-meta {
+    direction: ltr;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.01);
+}
+
+.portfolio-meta {
+    padding: 1rem;
+}
+
+.proj-category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.portfolio-meta h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.portfolio-meta p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   7. INTAKE MODULE (CRM-READY ESTIMATE FORM)
+   ========================================================================== */
+.intake-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    background-color: var(--bg-alt);
+    padding: 4.5rem;
+}
+
+.intake-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intake-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.intake-info p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.contact-details p {
+    margin-bottom: 0.5rem;
+}
+
+.intake-form-box {
+    background: var(--card-bg);
+    padding: 3rem;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.04);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    border: 1px solid rgba(25, 31, 36, 0.12);
+    background: var(--bg-light);
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    border-color: var(--accent);
+    background: white;
+}
+
+/* ==========================================================================
+   8. FOOTER & STRUCTURAL RESPONSIVENESS
+   ========================================================================== */
+footer {
+    background-color: var(--primary);
+    color: #7d8993;
+    text-align: center;
+    padding: 4rem 2rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+@media (max-width: 1024px) {
+    .hero-split { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .hero-content { padding: 6rem 2rem; margin: 0 auto; }
+    .feature-asymmetric { grid-template-columns: 1fr; }
+    .feature-image { display: none; }
+    .portfolio-item { grid-template-columns: 1fr; gap: 1.5rem; }
+    .portfolio-item:nth-child(even) { direction: ltr; }
+    .portfolio-item img { height: 320px; }
+    .intake-wrapper { grid-template-columns: 1fr; padding: 2rem; }
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-split h1 { font-size: 2.8rem; }
+    .section-header h2 { font-size: 2.2rem; }
+    .feature-text { padding: 3rem 1.5rem; }
+    .feature-text h2 { font-size: 2rem; }
+    .portfolio-meta h3 { font-size: 1.8rem; }
+    .container { padding: 4.5rem 1.5rem; }
+}
