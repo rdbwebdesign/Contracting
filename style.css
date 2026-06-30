@@ -532,3 +532,73 @@ footer {
     .portfolio-meta h3 { font-size: 1.8rem; }
     .container { padding: 4.5rem 1.5rem; }
 }
+/* ==========================================================================
+   9. EXTRA RESPONSIVE PATCHES (MOBILE FIXES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. Unhide and structure navigation dynamically for touch screen layouts */
+    header {
+        padding: 1rem;
+    }
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .nav-links { 
+        display: flex !important; 
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.2rem; 
+        padding: 0.5rem 0;
+    }
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+    .btn-nav {
+        padding: 0.4rem 1rem;
+    }
+
+    /* 2. Balance hero sections dynamically so big text scales into the viewport */
+    .hero-split {
+        min-height: auto; /* Overrides the restrictive 85vh layout block */
+    }
+    .hero-content {
+        padding: 3.5rem 1.2rem;
+        text-align: center;
+    }
+    .hero-split h1 {
+        font-size: 2.3rem !important; /* Forces copy to safely scale down */
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+    }
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 1.5rem;
+    }
+
+    /* 3. Stabilize structural grid systems and tight inner form fields */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .service-card {
+        padding: 2rem 1.5rem;
+    }
+    .stat-row {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+    .intake-wrapper {
+        padding: 1.5rem 1rem !important;
+    }
+    .intake-form-box {
+        padding: 1.5rem 1rem;
+    }
+}
